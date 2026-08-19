@@ -4,7 +4,6 @@ backend:
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
-
 collections:
   # 1. SITE SETTINGS & ANNOUNCEMENTS
   - name: "settings"
