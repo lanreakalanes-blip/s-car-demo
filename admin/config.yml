@@ -1,0 +1,46 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  # 1. SITE SETTINGS & ANNOUNCEMENTS
+  - name: "settings"
+    label: "Site Settings & Updates"
+    file: "content/settings.json"
+    create: true
+    fields:
+      - {label: "Announcement Banner (Leave blank to hide)", name: "banner", widget: "string"}
+      - {label: "Workshop Status (e.g. Open Now / Closed)", name: "status", widget: "string"}
+
+  # 2. CARS FOR SALE
+  - name: "cars"
+    label: "Cars For Sale"
+    file: "content/cars.json"
+    create: true
+    fields:
+      - label: "Cars"
+        name: "cars"
+        widget: "list"
+        fields:
+          - {label: "Car Title", name: "title", widget: "string"}
+          - {label: "Price (£)", name: "price", widget: "string"}
+          - {label: "Specs & Info", name: "specs", widget: "text"}
+          - {label: "Car Photo", name: "image", widget: "image"}
+
+  # 3. CUSTOMER REVIEWS
+  - name: "reviews"
+    label: "Customer Reviews"
+    file: "content/reviews.json"
+    create: true
+    fields:
+      - label: "Reviews"
+        name: "reviews"
+        widget: "list"
+        fields:
+          - {label: "Customer Name", name: "name", widget: "string"}
+          - {label: "Review Text", name: "text", widget: "text"}
+          - {label: "Star Rating (1-5)", name: "rating", widget: "number"}
+          - {label: "Date/Time (e.g. 2 days ago)", name: "meta", widget: "string"}

@@ -1,0 +1,16 @@
+{
+  "cars": [
+    {
+      "title": "VW Scirocco 2.0 TDI",
+      "price": "£6,495",
+      "specs": "2014 · 82,000 mi · Manual",
+      "image": "/images/uploads/scirocco.jpg"
+    },
+    {
+      "title": "Ford Mondeo Estate",
+      "price": "£11,200",
+      "specs": "2018 · 45,000 mi · Automatic",
+      "image": "/images/uploads/mondeo.jpg"
+    }
+  ]
+}

@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>S.CAR REPAIR CENTRE — Wirral Car Servicing & Repairs | 5.0 ★</title>
+<meta name="description" content="S.CAR REPAIR CENTRE on Cleveland St, Wirral. 5.0 stars from 24 verified reviews. Car servicing, MOTs, bodywork, diagnostics & used cars for sale. Call 07359793570." />
+
+<!-- Netlify Identity Widget (Required for Admin CMS Login) -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ---------- Reset & Tokens ---------- */
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --carbon:#0a0a0b;
+    --carbon-2:#111114;
+    --steel:#1a1a1e;
+    --steel-2:#24242a;
+    --hairline:#2c2c33;
+    --fog:#d6d6da;
+    --fog-dim:#8a8a92;
+    --fog-faint:#51515a;
+    --hi-vis:#ff5a0f;
+    --hi-vis-2:#ff8a3d;
+    --hi-vis-glow:rgba(255,90,15,.35);
+    --amber:#ffb547;
+    --steel-blue:#3b4a5a;
+    --ease:cubic-bezier(.7,.0,.2,1);
+    --ease-precise:cubic-bezier(.4,0,.2,1);
+    --ease-emphasis:cubic-bezier(.16,1,.3,1);
+  }
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',-apple-system,sans-serif;
+    background:var(--carbon);
+    color:var(--fog);
+    line-height:1.55;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  body::before{
+    content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.06;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode:overlay;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+  ::selection{background:var(--hi-vis);color:#fff}
+
+  .wrap{width:min(1320px,92vw);margin-inline:auto}
+  .eyebrow{
+    font-family:'Oswald';font-weight:500;font-size:12px;letter-spacing:.35em;
+    text-transform:uppercase;color:var(--hi-vis);
+    display:inline-flex;align-items:center;gap:.7em;
+  }
+  .eyebrow::before{content:'';width:28px;height:1px;background:var(--hi-vis);display:inline-block}
+  .h2{font-family:'Oswald';font-weight:600;font-size:clamp(2.2rem,5vw,4.2rem);line-height:.98;text-transform:uppercase;color:#fff;letter-spacing:-.01em}
+  .lede{font-size:clamp(1rem,1.2vw,1.18rem);color:var(--fog-dim);max-width:54ch}
+
+  section{position:relative;padding:clamp(80px,12vh,160px) 0}
+  .sec-head{margin-bottom:clamp(48px,6vw,90px)}
+
+  /* ---------- Marquee ---------- */
+  .marquee{background:var(--hi-vis);color:#0a0a0b;overflow:hidden;border-block:1px solid #000}
+  .marquee-track{display:flex;gap:3rem;animation:slide 28s linear infinite;white-space:nowrap;padding:.55rem 0;font-family:'Oswald';font-weight:500;letter-spacing:.18em;font-size:13px;text-transform:uppercase}
+  .marquee-track span{display:inline-flex;align-items:center;gap:1.5rem}
+  .marquee-track span::after{content:'◆';color:#0a0a0b;opacity:.6}
+  @keyframes slide{to{transform:translateX(-50%)}}
+
+  /* ---------- Header ---------- */
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 0;transition:background .4s var(--ease), padding .4s var(--ease), border-color .4s;border-bottom:1px solid transparent}
+  header.nav.scrolled{background:rgba(10,10,11,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom-color:var(--hairline);padding:12px 0}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem}
+  .brand{display:flex;align-items:center;gap:.85rem}
+  .brand-mark{width:46px;height:46px;background:var(--hi-vis);display:grid;place-items:center;font-family:'Oswald';font-weight:700;font-size:22px;color:#0a0a0b;clip-path:polygon(0 0,100% 0,100% 70%,85% 100%,0 100%);transition:transform .5s var(--ease)}
+  .brand:hover .brand-mark{transform:rotate(-6deg) scale(1.05)}
+  .brand-text{line-height:1}
+  .brand-text .name{font-family:'Oswald';font-weight:600;letter-spacing:.06em;font-size:15px;color:#fff;text-transform:uppercase}
+  .brand-text .sub{font-size:10.5px;letter-spacing:.3em;color:var(--fog-dim);text-transform:uppercase;margin-top:4px}
+
+  nav.primary{display:flex;gap:2.2rem;align-items:center}
+  nav.primary a{font-family:'Oswald';font-weight:400;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--fog);position:relative;padding:.3em 0;transition:color .3s}
+  nav.primary a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--hi-vis);transition:width .35s var(--ease)}
+  nav.primary a:hover{color:#fff}
+  nav.primary a:hover::after{width:100%}
+
+  .nav-cta{display:inline-flex;align-items:center;gap:.6em;background:var(--hi-vis);color:#0a0a0b;padding:.85em 1.4em;font-family:'Oswald';font-weight:600;font-size:13px;letter-spacing:.2em;text-transform:uppercase;transition:transform .35s var(--ease), background .35s;clip-path:polygon(0 0,100% 0,100% 65%,90% 100%,0 100%)}
+  .nav-cta:hover{background:var(--hi-vis-2);transform:translateY(-2px)}
+  .nav-cta svg{width:14px;height:14px}
+
+  .burger{display:none;width:34px;height:34px;flex-direction:column;justify-content:center;gap:5px;padding:0 4px}
+  .burger span{display:block;height:2px;background:#fff;transition:.3s}
+  .burger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .burger.active span:nth-child(2){opacity:0}
+  .burger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+  /* ---------- Hero ---------- */
+  .hero{min-height:100vh;padding-top:130px;position:relative;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(circle at 78% 30%, rgba(255,90,15,.18), transparent 55%),radial-gradient(circle at 12% 80%, rgba(59,74,90,.25), transparent 50%),linear-gradient(180deg,#0a0a0b 0%, #0d0d10 60%, #0a0a0b 100%)}
+  .hero-grid{position:absolute;inset:0;z-index:1;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(circle at 50% 50%, #000 30%, transparent 75%);-webkit-mask-image:radial-gradient(circle at 50% 50%, #000 30%, transparent 75%)}
+  .hero-inner{position:relative;z-index:3;display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;min-height:calc(100vh - 130px)}
+  .hero-copy{padding-block:40px}
+
+  .hero h1{font-family:'Oswald';font-weight:700;font-size:clamp(3rem,8.5vw,7.2rem);line-height:.88;letter-spacing:-.015em;text-transform:uppercase;color:#fff;margin-block:22px 26px}
+  .hero h1 .accent{color:var(--hi-vis);display:inline-block;position:relative}
+  .hero h1 .accent::after{content:'';position:absolute;left:0;right:0;bottom:-6px;height:6px;background:var(--hi-vis);opacity:.25}
+  .hero h1 .stroke{-webkit-text-stroke:1.5px var(--fog);color:transparent}
+
+  .hero-meta{display:flex;align-items:center;gap:24px;margin-top:34px;padding-top:24px;border-top:1px solid var(--hairline);flex-wrap:wrap}
+  .rating-block{display:flex;align-items:center;gap:14px}
+  .rating-num{font-family:'Oswald';font-weight:700;font-size:42px;line-height:1;color:#fff}
+  .rating-stars{display:flex;flex-direction:column;gap:4px}
+  .stars-row{display:flex;gap:2px;color:var(--hi-vis);font-size:14px}
+  .stars-row span{display:inline-block;width:14px;height:14px}
+  .rating-count{font-size:11px;letter-spacing:.18em;color:var(--fog-dim);text-transform:uppercase;font-family:'Oswald'}
+
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+  .btn{display:inline-flex;align-items:center;gap:.7em;padding:1.1em 1.8em;font-family:'Oswald';font-weight:600;font-size:13px;letter-spacing:.22em;text-transform:uppercase;transition:all .4s var(--ease);cursor:pointer;position:relative;overflow:hidden}
+  .btn-primary{background:var(--hi-vis);color:#0a0a0b}
+  .btn-primary:hover{background:#fff;transform:translateY(-3px)}
+  .btn-outline{border:1px solid var(--hairline);color:#fff}
+  .btn-outline:hover{border-color:var(--hi-vis);color:var(--hi-vis);transform:translateY(-3px)}
+  .btn svg{width:14px;height:14px;transition:transform .35s var(--ease)}
+  .btn:hover svg{transform:translateX(4px)}
+
+  /* Hero collage */
+  .collage{position:relative;height:600px;perspective:1000px}
+  .collage .photo{position:absolute;border:6px solid #1a1a1e;box-shadow:0 30px 70px -20px rgba(0,0,0,.7), 0 0 0 1px rgba(255,90,15,.08);overflow:hidden;transition:transform .6s var(--ease)}
+  .collage .photo img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+  .collage .photo:hover img{transform:scale(1.08)}
+  .collage .p1{width:60%;height:55%;top:0;right:0;transform:rotate(2deg);z-index:3}
+  .collage .p1:hover{transform:rotate(2deg) translateY(-8px)}
+  .collage .p2{width:48%;height:42%;bottom:30px;left:0;transform:rotate(-3deg);z-index:2}
+  .collage .p2:hover{transform:rotate(-3deg) translateY(-8px)}
+  .collage .p3{width:42%;height:38%;bottom:0;right:8%;transform:rotate(4deg);z-index:4}
+  .collage .p3:hover{transform:rotate(4deg) translateY(-8px)}
+  .collage .badge{position:absolute;top:42%;left:-30px;z-index:10;width:130px;height:130px;background:var(--hi-vis);color:#0a0a0b;border-radius:50%;display:grid;place-items:center;text-align:center;font-family:'Oswald';font-weight:600;font-size:11px;letter-spacing:.18em;text-transform:uppercase;line-height:1.3;box-shadow:0 20px 40px -10px var(--hi-vis-glow);animation:spin 22s linear infinite}
+  .badge-inner{display:flex;flex-direction:column;gap:4px}
+  .badge-inner strong{font-size:24px;letter-spacing:0;line-height:1}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  .scroll-cue{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);z-index:5;display:flex;flex-direction:column;align-items:center;gap:10px;font-family:'Oswald';font-size:11px;letter-spacing:.3em;color:var(--fog-dim);text-transform:uppercase}
+  .scroll-cue .line{width:1px;height:50px;background:linear-gradient(180deg,var(--hi-vis),transparent);position:relative;overflow:hidden}
+  .scroll-cue .line::after{content:'';position:absolute;top:-50px;left:0;width:1px;height:50px;background:#fff;animation:drop 2.2s var(--ease) infinite}
+  @keyframes drop{0%{top:-50px}100%{top:100%}}
+
+  /* ---------- Stats ---------- */
+  .stats{border-block:1px solid var(--hairline);background:var(--carbon-2);padding:48px 0}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+  .stat{display:flex;flex-direction:column;gap:6px}
+  .stat .num{font-family:'Oswald';font-weight:700;font-size:clamp(2.4rem,4vw,3.4rem);color:#fff;line-height:1}
+  .stat .num .symbol{color:var(--hi-vis)}
+  .stat .label{font-family:'Oswald';font-size:11px;letter-spacing:.25em;color:var(--fog-dim);text-transform:uppercase}
+
+  /* ---------- Services (Interactive Grid) ---------- */
+  .services{background:var(--carbon);padding-bottom:120px}
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;perspective:1600px;transform-style:preserve-3d}
+  .service{background:var(--carbon-2);border:1px solid var(--hairline);padding:0;position:relative;overflow:visible;transition:transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease, opacity 0.35s ease;will-change:transform;transform-origin:center;z-index:1}
+  .service-inner{padding:46px 38px 42px;position:relative;overflow:hidden;height:100%}
+  .service.is-big{transform:scale(1.08) translate(-12px, -12px) translateZ(30px);z-index:10;border-color:var(--hi-vis) !important;background:var(--steel);box-shadow:0 0 5px var(--hi-vis),0 0 15px var(--hi-vis-glow),0 20px 40px rgba(0,0,0,0.7)}
+  .service.is-small{transform:scale(1.02) translate(-4px, -4px) translateZ(10px);opacity:0.85}
+  .service .ico{width:54px;height:54px;border:1px solid var(--hairline);display:grid;place-items:center;color:var(--hi-vis);margin-bottom:28px;transition:border-color .4s, transform .4s var(--ease)}
+  .service.is-big .ico{border-color:var(--hi-vis);transform:rotate(-8deg) scale(1.05)}
+  .service .ico svg{width:26px;height:26px}
+  .service h3{font-family:'Oswald';font-weight:600;font-size:1.6rem;color:#fff;text-transform:uppercase;letter-spacing:.01em;margin-bottom:14px}
+  .service p{color:var(--fog-dim);font-size:.96rem;line-height:1.6;position:relative;z-index:2;}
+  .service .tag{position:absolute;top:24px;right:24px;font-family:'Oswald';font-size:11px;letter-spacing:.2em;color:var(--fog-faint);z-index:2}
+  .service .num-big{position:absolute;bottom:-40px;right:-20px;font-family:'Oswald';font-weight:700;font-size:160px;line-height:1;color:rgba(255,255,255,.03);pointer-events:none;z-index:1}
+  .service.is-big .num-big{color:rgba(255,90,15,.08);}
+
+  /* ---------- Cars For Sale ---------- */
+  .sales{background:var(--carbon-2);position:relative;overflow:hidden}
+  .sales-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .car-card{background:var(--carbon);border:1px solid var(--hairline);transition:transform .5s var(--ease), border-color .5s;position:relative}
+  .car-card:hover{transform:translateY(-8px);border-color:var(--hi-vis)}
+  .car-img{aspect-ratio:16/9;background:var(--steel);position:relative;overflow:hidden}
+  .car-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease);opacity:.85}
+  .car-card:hover .car-img img{transform:scale(1.05);opacity:1}
+  .car-badge{position:absolute;top:14px;left:14px;background:var(--hi-vis);color:#0a0a0b;padding:.5em .9em;font-family:'Oswald';font-weight:600;font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+  .car-info{padding:26px 24px 30px}
+  .car-name{font-family:'Oswald';font-weight:600;font-size:1.4rem;color:#fff;text-transform:uppercase;margin-bottom:8px;letter-spacing:.01em}
+  .car-specs{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+  .car-spec{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;color:var(--fog-dim);font-family:'Oswald';letter-spacing:.05em}
+  .car-spec svg{width:14px;height:14px;color:var(--hi-vis)}
+  .car-bottom{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--hairline);padding-top:18px;margin-top:6px}
+  .car-price{font-family:'Oswald';font-weight:700;font-size:1.5rem;color:#fff}
+  .car-enquire{font-family:'Oswald';font-weight:500;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--hi-vis);display:inline-flex;align-items:center;gap:.4em;transition:gap .3s var(--ease)}
+  .car-card:hover .car-enquire{gap:.8em}
+
+  /* ---------- Why Us ---------- */
+  .why{background:var(--carbon);position:relative;overflow:hidden}
+  .why::before{content:'';position:absolute;top:0;right:-10%;width:50%;height:100%;background:radial-gradient(circle, rgba(255,90,15,.06), transparent 60%);pointer-events:none}
+  .why-inner{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:flex-start}
+  .why-left{position:sticky;top:120px}
+  .why-left .h2{margin-block:18px 24px}
+  .why-left .lede{margin-bottom:30px}
+  .why-img{position:relative;margin-top:30px;border:6px solid #1a1a1e;box-shadow:0 30px 60px -20px rgba(0,0,0,.7)}
+  .why-img img{aspect-ratio:4/3;object-fit:cover;width:100%}
+  .why-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%, rgba(10,10,11,.6))}
+
+  .steps{display:flex;flex-direction:column;gap:0}
+  .step{display:grid;grid-template-columns:80px 1fr;gap:30px;padding:38px 0;border-top:1px solid var(--hairline);position:relative}
+  .step:last-child{border-bottom:1px solid var(--hairline)}
+  .step .step-num{font-family:'Oswald';font-weight:700;font-size:54px;line-height:1;color:transparent;-webkit-text-stroke:1.5px var(--hi-vis);transition:color .4s}
+  .step:hover .step-num{color:var(--hi-vis)}
+  .step h4{font-family:'Oswald';font-weight:600;font-size:1.5rem;color:#fff;text-transform:uppercase;margin-bottom:8px;letter-spacing:.01em}
+  .step p{color:var(--fog-dim);font-size:1rem;line-height:1.6}
+  .step .meta{margin-top:14px;display:inline-flex;gap:10px;align-items:center;font-family:'Oswald';font-size:11px;letter-spacing:.22em;color:var(--hi-vis);text-transform:uppercase}
+  .step .meta::before{content:'';width:18px;height:1px;background:var(--hi-vis)}
+
+  /* ---------- Gallery ---------- */
+  .gallery{background:var(--carbon-2)}
+  .gallery-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:60px}
+  .gallery-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:140px;gap:14px}
+  .g-tile{position:relative;overflow:hidden;border:1px solid var(--hairline);cursor:pointer}
+  .g-tile img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease), filter .5s}
+  .g-tile::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%, rgba(10,10,11,.85));opacity:.6;transition:opacity .4s}
+  .g-tile:hover img{transform:scale(1.08);filter:saturate(1.1)}
+  .g-tile:hover::after{opacity:.9}
+  .g-tile .cap{position:absolute;left:18px;bottom:16px;z-index:2;font-family:'Oswald';font-weight:500;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#fff;transform:translateY(8px);opacity:0;transition:all .4s var(--ease)}
+  .g-tile:hover .cap{transform:translateY(0);opacity:1}
+  .g-tile .corner{position:absolute;top:14px;right:14px;z-index:2;width:32px;height:32px;background:var(--hi-vis);color:#0a0a0b;display:grid;place-items:center;font-family:'Oswald';font-weight:600;font-size:12px;opacity:0;transition:opacity .4s, transform .4s var(--ease);transform:scale(.6) rotate(-20deg)}
+  .g-tile:hover .corner{opacity:1;transform:scale(1) rotate(0)}
+  .g1{grid-column:span 5;grid-row:span 3}
+  .g2{grid-column:span 4;grid-row:span 2}
+  .g3{grid-column:span 3;grid-row:span 2}
+  .g4{grid-column:span 4;grid-row:span 2}
+  .g5{grid-column:span 3;grid-row:span 3}
+
+  /* ---------- Reviews ---------- */
+  .reviews{background:var(--carbon);overflow:hidden}
+  .reviews-head{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:flex-end;margin-bottom:60px}
+  .reviews-summary{display:flex;gap:50px;align-items:center}
+  .big-rating{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+  .big-rating .num{font-family:'Oswald';font-weight:700;font-size:5rem;line-height:1;color:var(--hi-vis)}
+  .big-rating .stars{display:flex;gap:3px;color:var(--hi-vis)}
+  .big-rating .stars svg{width:22px;height:22px}
+  .big-rating .lbl{font-family:'Oswald';font-size:11px;letter-spacing:.25em;color:var(--fog-dim);text-transform:uppercase}
+  .rating-bars{display:flex;flex-direction:column;gap:8px;min-width:220px}
+  .bar-row{display:grid;grid-template-columns:18px 1fr 30px;align-items:center;gap:10px;font-family:'Oswald';font-size:12px;color:var(--fog-dim)}
+  .bar-track{height:6px;background:var(--steel);overflow:hidden}
+  .bar-fill{height:100%;background:var(--hi-vis);width:0;transition:width 1.4s var(--ease-emphasis)}
+
+  .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .review{background:var(--carbon-2);border:1px solid var(--hairline);padding:34px 30px;position:relative;transition:transform .5s var(--ease), border-color .5s}
+  .review:hover{transform:translateY(-6px);border-color:var(--hi-vis)}
+  .review .quote-mark{position:absolute;top:18px;right:24px;font-family:'Oswald';font-weight:700;font-size:80px;line-height:1;color:var(--hi-vis);opacity:.18}
+  .review .stars{display:flex;gap:3px;color:var(--hi-vis);margin-bottom:18px}
+  .review .stars svg{width:16px;height:16px}
+  .review .body{color:var(--fog);font-size:1rem;line-height:1.65;margin-bottom:24px;position:relative;z-index:2}
+  .review .body .truncate{display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+  .review .expand{font-family:'Oswald';font-size:11px;letter-spacing:.22em;color:var(--hi-vis);text-transform:uppercase;cursor:pointer;margin-top:8px;display:inline-block}
+  .review .expand:hover{color:var(--hi-vis-2)}
+  .review .author{display:flex;align-items:center;gap:14px;padding-top:20px;border-top:1px solid var(--hairline)}
+  .review .avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--hi-vis),var(--amber));display:grid;place-items:center;font-family:'Oswald';font-weight:700;color:#0a0a0b;font-size:16px}
+  .review .author-info .name{font-weight:600;color:#fff;font-size:.95rem}
+  .review .author-info .meta{font-size:.78rem;color:var(--fog-dim);margin-top:2px}
+  .review.owner-reply{background:linear-gradient(180deg,var(--steel),var(--carbon-2));border-left:3px solid var(--hi-vis)}
+  .owner-tag{display:inline-block;font-family:'Oswald';font-size:10px;letter-spacing:.22em;color:var(--hi-vis);text-transform:uppercase;margin-bottom:10px;padding:3px 8px;border:1px solid var(--hi-vis)}
+
+  .reviews-cta{text-align:center;margin-top:60px}
+  .reviews-cta p{color:var(--fog-dim);margin-bottom:20px}
+
+  /* ---------- Location & Hours ---------- */
+  .locate{background:var(--carbon-2)}
+  .locate-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:stretch}
+  .info-card{border:1px solid var(--hairline);background:var(--carbon);padding:42px 38px}
+  .info-card h3{font-family:'Oswald';font-weight:600;font-size:1.6rem;color:#fff;text-transform:uppercase;margin-block:14px 24px;letter-spacing:.01em}
+  .info-row{display:grid;grid-template-columns:34px 1fr;gap:18px;padding:18px 0;border-top:1px solid var(--hairline);align-items:flex-start}
+  .info-row:last-child{border-bottom:1px solid var(--hairline)}
+  .info-row .ico{color:var(--hi-vis);display:flex;align-items:center;height:24px}
+  .info-row .ico svg{width:18px;height:18px}
+  .info-row .lbl{font-family:'Oswald';font-size:11px;letter-spacing:.25em;color:var(--fog-dim);text-transform:uppercase;margin-bottom:4px}
+  .info-row .val{color:#fff;font-size:1.02rem;line-height:1.5}
+  .info-row .val a:hover{color:var(--hi-vis)}
+  .info-row .sub{font-size:.85rem;color:var(--fog-dim);margin-top:3px}
+  .pay-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  .pay-chip{background:var(--steel);border:1px solid var(--hairline);padding:6px 12px;font-size:.75rem;color:var(--fog);display:inline-flex;align-items:center;gap:6px;font-family:'Oswald';letter-spacing:.1em}
+  .pay-chip svg{width:12px;height:12px;color:var(--hi-vis)}
+
+  .hours-table{margin-top:8px}
+  .hours-row{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-top:1px solid var(--hairline);font-family:'Oswald';font-size:13px;letter-spacing:.1em}
+  .hours-row:last-child{border-bottom:1px solid var(--hairline)}
+  .hours-row .day{text-transform:uppercase;color:var(--fog)}
+  .hours-row .time{color:var(--fog-dim)}
+  .hours-row.today{color:var(--hi-vis)}
+  .hours-row.today .day,.hours-row.today .time{color:var(--hi-vis);font-weight:600}
+  .hours-row.closed .time{color:var(--fog-faint)}
+  .now-badge{display:inline-flex;align-items:center;gap:6px;margin-left:8px;padding:2px 8px;background:var(--hi-vis);color:#0a0a0b;font-size:10px;letter-spacing:.18em;font-weight:600}
+  .now-badge.closed{background:var(--steel-2);color:var(--fog-dim)}
+
+  .map-card{position:relative;border:1px solid var(--hairline);background:var(--carbon);overflow:hidden;min-height:480px}
+  .map-card iframe{width:100%;height:100%;border:0;filter:grayscale(.4) contrast(1.1) invert(.92) hue-rotate(180deg)}
+  .map-overlay{position:absolute;top:20px;left:20px;right:20px;background:rgba(10,10,11,.92);backdrop-filter:blur(10px);border:1px solid var(--hairline);padding:22px 24px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+  .map-overlay .left .lbl{font-family:'Oswald';font-size:10px;letter-spacing:.28em;color:var(--hi-vis);text-transform:uppercase;margin-bottom:6px}
+  .map-overlay .left .addr{color:#fff;font-weight:500;font-size:.95rem}
+  .map-overlay .dir-btn{background:var(--hi-vis);color:#0a0a0b;padding:.85em 1.2em;font-family:'Oswald';font-weight:600;font-size:12px;letter-spacing:.2em;text-transform:uppercase;display:inline-flex;align-items:center;gap:.5em;transition:background .3s, transform .3s var(--ease);clip-path:polygon(0 0,100% 0,100% 70%,90% 100%,0 100%);white-space:nowrap}
+  .map-overlay .dir-btn:hover{background:#fff;transform:translateY(-2px)}
+
+  /* ---------- FAQ ---------- */
+  .faq{background:var(--carbon)}
+  .faq-list{max-width:900px;margin:0 auto}
+  .faq-item{border-bottom:1px solid var(--hairline)}
+  .faq-item:first-child{border-top:1px solid var(--hairline)}
+  .faq-q{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 0;cursor:pointer;font-family:'Oswald';font-weight:500;font-size:1.2rem;color:#fff;text-transform:uppercase;letter-spacing:.01em;transition:color .3s}
+  .faq-q:hover{color:var(--hi-vis)}
+  .faq-q .icon{width:24px;height:24px;flex-shrink:0;border:1px solid var(--fog-faint);display:grid;place-items:center;transition:all .4s var(--ease)}
+  .faq-q .icon svg{width:12px;height:12px;transition:transform .4s var(--ease)}
+  .faq-item.active .faq-q{color:var(--hi-vis)}
+  .faq-item.active .faq-q .icon{background:var(--hi-vis);border-color:var(--hi-vis);color:#0a0a0b}
+  .faq-item.active .faq-q .icon svg{transform:rotate(45deg)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .5s var(--ease-emphasis)}
+  .faq-a-inner{padding:0 0 26px 0;color:var(--fog-dim);font-size:1rem;line-height:1.65;max-width:70ch}
+
+  /* ---------- CTA Band ---------- */
+  .cta-band{background:var(--hi-vis);color:#0a0a0b;padding:clamp(70px,9vw,110px) 0;position:relative;overflow:hidden}
+  .cta-band::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(45deg, rgba(0,0,0,.05) 0 2px, transparent 2px 22px)}
+  .cta-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.4fr .9fr;gap:50px;align-items:center}
+  .cta-band h2{font-family:'Oswald';font-weight:700;font-size:clamp(2.4rem,5vw,4.6rem);line-height:.95;text-transform:uppercase;color:#0a0a0b;letter-spacing:-.01em}
+  .cta-band p{margin-top:18px;font-size:1.1rem;max-width:48ch;color:rgba(10,10,11,.8)}
+  .cta-actions{display:flex;flex-direction:column;gap:14px}
+  .cta-actions .btn{background:#0a0a0b;color:#fff;justify-content:space-between;padding:1.3em 1.6em}
+  .cta-actions .btn:hover{background:#fff;color:#0a0a0b;transform:translateY(-3px)}
+  .cta-actions .btn svg{width:18px;height:18px}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--carbon-2);padding:80px 0 30px;border-top:1px solid var(--hairline)}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:50px;margin-bottom:50px}
+  .foot-brand .brand{margin-bottom:24px}
+  .foot-brand p{color:var(--fog-dim);max-width:38ch;font-size:.95rem}
+  .foot-col h5{font-family:'Oswald';font-weight:600;font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--hi-vis);margin-bottom:22px}
+  .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+  .foot-col a{color:var(--fog-dim);font-size:.95rem;transition:color .3s, padding .3s}
+  .foot-col a:hover{color:#fff;padding-left:6px}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:30px;border-top:1px solid var(--hairline);flex-wrap:wrap;gap:14px;font-size:.85rem;color:var(--fog-faint)}
+  .foot-bottom .links{display:flex;gap:24px}
+  .foot-bottom a:hover{color:var(--hi-vis)}
+
+  /* ---------- Reveal ---------- */
+  .reveal{opacity:0;transform:translateY(40px);transition:opacity .9s var(--ease-emphasis), transform .9s var(--ease-emphasis)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal-stagger > *{opacity:0;transform:translateY(30px);transition:opacity .7s var(--ease-emphasis), transform .7s var(--ease-emphasis)}
+  .reveal-stagger.in > *{opacity:1;transform:none}
+  .reveal-stagger.in > *:nth-child(1){transition-delay:.05s}
+  .reveal-stagger.in > *:nth-child(2){transition-delay:.15s}
+  .reveal-stagger.in > *:nth-child(3){transition-delay:.25s}
+  .reveal-stagger.in > *:nth-child(4){transition-delay:.35s}
+  .reveal-stagger.in > *:nth-child(5){transition-delay:.45s}
+  .reveal-stagger.in > *:nth-child(6){transition-delay:.55s}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:980px){
+    .hero-inner{grid-template-columns:1fr;gap:60px}
+    .collage{height:480px;margin-top:20px}
+    .stats-grid{grid-template-columns:repeat(2,1fr);gap:30px}
+    .services-grid{grid-template-columns:repeat(2,1fr)}
+    .sales-grid{grid-template-columns:repeat(2,1fr)}
+    .why-inner{grid-template-columns:1fr;gap:50px}
+    .why-left{position:static}
+    .reviews-grid{grid-template-columns:1fr}
+    .reviews-head{grid-template-columns:1fr}
+    .reviews-summary{flex-direction:column;align-items:flex-start;gap:24px}
+    .locate-inner{grid-template-columns:1fr;gap:30px}
+    .cta-inner{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:40px}
+    .gallery-grid{grid-auto-rows:120px}
+    .g1{grid-column:span 12;grid-row:span 3}
+    .g2{grid-column:span 6;grid-row:span 2}
+    .g3{grid-column:span 6;grid-row:span 2}
+    .g4{grid-column:span 7;grid-row:span 2}
+    .g5{grid-column:span 5;grid-row:span 2}
+  }
+  @media (max-width:720px){
+    nav.primary{display:none}
+    .burger{display:flex}
+    nav.primary.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--carbon-2);padding:30px;gap:18px;border-bottom:1px solid var(--hairline)}
+    .services-grid{grid-template-columns:1fr}
+    .sales-grid{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr}
+    .nav-cta{display:none}
+    .hero{padding-top:110px}
+    .collage{height:400px}
+    .collage .badge{width:100px;height:100px;left:-10px}
+    .collage .badge-inner strong{font-size:20px}
+    .info-card{padding:30px 24px}
+    .service.is-big { transform: scale(1.02); }
+    .service.is-small { transform: scale(1.0); opacity: 0.5; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation-duration:.001s !important;transition-duration:.001s !important}
+  }
+</style>
+</head>
+<body>
+
+<!-- Announcement Banner (Controlled by CMS) -->
+<div id="announcementBanner"></div>
+
+<!-- ====== Marquee ====== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack">
+    <span>Car Servicing</span><span>MOT Testing</span><span>Bodywork &amp; Paint</span><span>Diagnostics</span><span>Used Cars For Sale</span><span>Brakes &amp; Suspension</span><span>Engine Repairs</span><span>Vehicle Recovery</span>
+    <span>Car Servicing</span><span>MOT Testing</span><span>Bodywork &amp; Paint</span><span>Diagnostics</span><span>Used Cars For Sale</span><span>Brakes &amp; Suspension</span><span>Engine Repairs</span><span>Vehicle Recovery</span>
+  </div>
+</div>
+
+<!-- ====== Header ====== -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand" aria-label="S.Car Repair Centre — home">
+      <div class="brand-mark">S</div>
+      <div class="brand-text">
+        <div class="name">S.Car Repair Centre</div>
+        <div class="sub">Wirral · Vehicle Repair</div>
+      </div>
+    </a>
+    <nav class="primary" id="primaryNav" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#sales">Cars For Sale</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="#locate">Find Us</a>
+    </nav>
+    <a href="tel:07359793570" class="nav-cta">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      07359793570
+    </a>
+    <button class="burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ====== Hero ====== -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+
+  <div class="wrap hero-inner">
+    <div class="hero-copy reveal-stagger">
+      <span class="eyebrow">Car Servicing · Wirral</span>
+      <h1>
+        Built on<br>
+        <span class="accent">Honest</span> Hands<br>
+        <span class="stroke">&amp; Steel.</span>
+      </h1>
+      <p class="lede">
+        Professional car servicing for Wirral, Merseyside and surrounding areas. MOTs, bodywork, diagnostics, used car sales and full mechanical repairs — done thoroughly, priced fairly, finished on time.
+      </p>
+      <div class="hero-actions">
+        <a href="tel:07359793570" class="btn btn-primary">
+          Call To Book
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#services" class="btn btn-outline">View Services</a>
+      </div>
+      <div class="hero-meta">
+        <div class="rating-block">
+          <div class="rating-num">5.0</div>
+          <div class="rating-stars">
+            <div class="stars-row" id="heroStars"></div>
+            <div class="rating-count">24 Reviews · Google Verified</div>
+          </div>
+        </div>
+        <div style="width:1px;height:42px;background:var(--hairline)"></div>
+        <div>
+          <div class="rating-count" style="margin-bottom:4px">Workshop Hours</div>
+          <div style="color:#fff;font-family:'Oswald';font-weight:500;letter-spacing:.05em">Mon — Fri · 8:30 — 16:30</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="collage reveal">
+      <div class="photo p1"><img src="unnamed.jpg" alt="S.Car Repair Centre workshop — main floor" loading="eager"></div>
+      <div class="photo p2"><img src="unnamed (1).jpg" alt="Bodywork and panel repair in progress" loading="lazy"></div>
+      <div class="photo p3"><img src="unnamed (2).jpg" alt="Diagnostic work on a vehicle" loading="lazy"></div>
+      <div class="badge">
+        <div class="badge-inner">
+          <strong>5.0</strong>
+          <span>24 Google<br>Reviews</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="line"></div>
+  </div>
+</section>
+
+<!-- ====== Stats ====== -->
+<section class="stats" style="padding-block:0">
+  <div class="wrap">
+    <div class="stats-grid reveal-stagger">
+      <div class="stat">
+        <div class="num" data-target="5.0" data-decimals="1">0.0</div>
+        <div class="label">Google Rating</div>
+      </div>
+      <div class="stat">
+        <div class="num"><span data-target="24">0</span><span class="symbol">+</span></div>
+        <div class="label">Verified Reviews</div>
+      </div>
+      <div class="stat">
+        <div class="num"><span data-target="100">0</span><span class="symbol">%</span></div>
+        <div class="label"> Honest Pricing</div>
+      </div>
+      <div class="stat">
+        <div class="num"><span data-target="830">0</span></div>
+        <div class="label">Workshop Opens · 8:30</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== Services ====== -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">What We do</span>
+      <h2 class="h2" style="margin-top:18px">Services<br><span style="color:var(--hi-vis)">Built For Real Cars.</span></h2>
+      <p class="lede" style="margin-top:24px">From a faulty thermostat to a full respray — one workshop, one team, one standard of work. Every job is treated like it's our own vehicle.</p>
+    </div>
+
+    <div class="services-grid reveal-stagger" id="serviceGrid">
+      <article class="service" data-index="0">
+        <div class="service-inner">
+          <span class="tag">01</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h2l2-6h10l2 6h2"/><circle cx="7" cy="16" r="2"/><circle cx="17" cy="16" r="2"/><path d="M9 16h6"/></svg></div>
+          <h3>Car Servicing</h3>
+          <p>Professional servicing for all makes and models. Interim, full and major services using quality parts and oils to keep your vehicle running perfectly.</p>
+          <div class="num-big">01</div>
+        </div>
+      </article>
+
+      <article class="service" data-index="1">
+        <div class="service-inner">
+          <span class="tag">02</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2 5h5l-4 3 1.5 5L12 12l-4.5 3L9 10 5 7h5z"/><path d="M5 19h14M5 22h14"/></svg></div>
+          <h3>MOT Testing</h3>
+          <p>Class 4 &amp; 7 MOTs carried out by certified testers. Same-day slots, honest advisories, and a clear pass-or-fail report you can trust.</p>
+          <div class="num-big">02</div>
+        </div>
+      </article>
+
+      <article class="service" data-index="2">
+        <div class="service-inner">
+          <span class="tag">03</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 7l3.5-3.5L14 7M7 7v13a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V7M7 7h10M10 12h4"/></svg></div>
+          <h3>Bodywork &amp; Paint</h3>
+          <p>Door &amp; panel repairs, full resprays, scratch and dent correction. Colour-matched and blended in-house for a factory-grade finish.</p>
+          <div class="num-big">03</div>
+        </div>
+      </article>
+
+      <article class="service" data-index="3">
+        <div class="service-inner">
+          <span class="tag">04</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M3 16l3 4M21 16l-3 4M9 20h6M8 8h.01M12 8h.01M16 8h.01"/></svg></div>
+          <h3>Diagnostics</h3>
+          <p>Modern OBD diagnostics on all makes. We walk you through the issue before any work begins. No mystery lights, no guesswork.</p>
+          <div class="num-big">04</div>
+        </div>
+      </article>
+
+      <article class="service" data-index="4">
+        <div class="service-inner">
+          <span class="tag">05</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></div>
+          <h3>Brakes &amp; Suspension</h3>
+          <p>Discs, pads, callipers, shocks, springs and tracking. Smooth, safe, properly torqued — every component checked before handover.</p>
+          <div class="num-big">05</div>
+        </div>
+      </article>
+
+      <article class="service" data-index="5">
+        <div class="service-inner">
+          <span class="tag">06</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 17h2l1-7h12l1 7h2M5 17v3M19 17v3M7 10l1-3h8l1 3"/><circle cx="8" cy="17" r="0" /></svg></div>
+          <h3>Recovery &amp; Pickup</h3>
+          <p>Stuck at home or roadside? We'll collect the vehicle, bring it to Cleveland Street, and call you with a clear plan before any spanner turns.</p>
+          <div class="num-big">06</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ====== Cars For Sale (Dynamic from Decap CMS) ====== -->
+<section class="sales" id="sales">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Showroom</span>
+      <h2 class="h2" style="margin-top:18px">Quality Used Cars<br><span style="color:var(--hi-vis)">For Sale.</span></h2>
+      <p class="lede" style="margin-top:24px">Every car we sell is checked, prepared, and signed off in our own workshop. Buy with confidence from mechanics who know the history.</p>
+    </div>
+
+    <!-- Cars will be injected here dynamically by JavaScript -->
+    <div class="sales-grid reveal-stagger" id="salesGrid"></div>
+    
+  </div>
+</section>
+
+<!-- ====== Why Us ====== -->
+<section class="why" id="why">
+  <div class="wrap why-inner">
+    <div class="why-left reveal">
+      <span class="eyebrow">The S.Car Way</span>
+      <h2 class="h2" style="margin-block:18px 24px">A Garage That<br><span style="color:var(--hi-vis)">Actually Cares.</span></h2>
+      <p class="lede">Located near Wirral Town Centre, serving Merseyside and surrounding areas. We built S.Car around the feeling of being genuinely looked after — transparent pricing, time taken to explain the work, and a standard of finish that earns the next visit.</p>
+      <p class="lede" style="margin-top:14px">No mystery quotes. No padded invoices. No surprise charges.</p>
+
+      <div class="why-img">
+        <img src="unnamed (3).jpg" alt="S.Car Repair Centre — workshop detail" loading="lazy">
+      </div>
+    </div>
+
+    <div class="steps reveal-stagger">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div>
+          <h4>Get In Touch</h4>
+          <p>Call 07359793570 or message us with the symptom, the make and the model. We'll talk you through what's likely involved before you commit to anything.</p>
+          <div class="meta">Free · No obligation</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div>
+          <h4>Drop-Off or Pickup</h4>
+          <p>Bring the vehicle to Cleveland Street, or arrange a pickup slot. We'll log the issue, photograph the car in, and confirm the inspection plan.</p>
+          <div class="meta">Workshop opens 8:30</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div>
+          <h4>Inspection &amp; Quote</h4>
+          <p>Thorough diagnostics — and we'll walk you through anything we spot along the way. You receive a clear, itemised quote before a single part is ordered.</p>
+          <div class="meta">Honest advisories</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div>
+          <h4>Repair &amp; Handover</h4>
+          <p>Work carried out by a small team that takes pride in the details. Final check, clean handover, and a car that drives the way it should.</p>
+          <div class="meta">VIP-level service</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== Gallery ====== -->
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="gallery-head reveal">
+      <div>
+        <span class="eyebrow">Inside The Workshop</span>
+        <h2 class="h2" style="margin-top:18px">Photos From The Floor</h2>
+      </div>
+      <p class="lede">A look at recent work — paint, panels, mechanical and the day-to-day of an independent Wirral garage.</p>
+    </div>
+
+    <div class="gallery-grid reveal">
+      <div class="g-tile g1">
+        <img src="unnamed.jpg" alt="Workshop main floor" loading="lazy">
+        <div class="corner">01</div>
+        <div class="cap">Workshop Floor</div>
+      </div>
+      <div class="g-tile g2">
+        <img src="unnamed (1).jpg" alt="Bodywork and panel repair" loading="lazy">
+        <div class="corner">02</div>
+        <div class="cap">Bodywork &amp; Panels</div>
+      </div>
+      <div class="g-tile g3">
+        <img src="unnamed (2).jpg" alt="Diagnostic check" loading="lazy">
+        <div class="corner">03</div>
+        <div class="cap">Diagnostics</div>
+      </div>
+      <div class="g-tile g4">
+        <img src="unnamed (3).jpg" alt="Vehicle detail" loading="lazy">
+        <div class="corner">04</div>
+        <div class="cap">Handover Detail</div>
+      </div>
+      <div class="g-tile g5">
+        <img src="unnamed.jpg" alt="Bay view" loading="lazy">
+        <div class="corner">05</div>
+        <div class="cap">Bay One</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== Reviews ====== -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="reviews-head reveal">
+      <div>
+        <span class="eyebrow">Customer Reviews</span>
+        <h2 class="h2" style="margin-top:18px">5.0 From <span style="color:var(--hi-vis)">24 Drivers</span></h2>
+      </div>
+      <div class="reviews-summary">
+        <div class="big-rating">
+          <div class="num">5.0</div>
+          <div class="stars" id="bigStars"></div>
+          <div class="lbl">Based on 24 Google Reviews</div>
+        </div>
+        <div class="rating-bars" id="ratingBars">
+          <div class="bar-row"><span>5</span><div class="bar-track"><div class="bar-fill" data-pct="100"></div></div><span>24</span></div>
+          <div class="bar-row"><span>4</span><div class="bar-track"><div class="bar-fill" data-pct="0"></div></div><span>0</span></div>
+          <div class="bar-row"><span>3</span><div class="bar-track"><div class="bar-fill" data-pct="0"></div></div><span>0</span></div>
+          <div class="bar-row"><span>2</span><div class="bar-track"><div class="bar-fill" data-pct="0"></div></div><span>0</span></div>
+          <div class="bar-row"><span>1</span><div class="bar-track"><div class="bar-fill" data-pct="0"></div></div><span>0</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reviews will be injected here dynamically by JavaScript -->
+    <div class="reviews-grid reveal-stagger" id="reviewsGrid"></div>
+
+    <div class="reviews-cta reveal">
+      <p>Been a customer of ours? We'd love to hear how we did.</p>
+      <a href="https://www.google.com/search?q=S.CAR+REPAIR+CENTRE+Cleveland+St+Wirral" target="_blank" rel="noopener" class="btn btn-primary">
+        Write A Review
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ====== Location, Hours & Facilities ====== -->
+<section class="locate" id="locate">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Find Us</span>
+      <h2 class="h2" style="margin-top:18px">Workshop &amp; Hours</h2>
+    </div>
+
+    <div class="locate-inner">
+      <div class="info-card reveal">
+        <h3>Cleveland St, Wirral</h3>
+
+        <div class="info-row">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>
+            <div class="lbl">Address</div>
+            <div class="val">Cleveland St, Wirral, Merseyside, CH41 4JN</div>
+            <div class="sub">Near Wirral Town Centre</div>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div>
+            <div class="lbl">Phone</div>
+            <div class="val"><a href="tel:07359793570">07359793570</a></div>
+            <div class="sub">Speak directly with the workshop</div>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div>
+            <div class="lbl">Opening Hours</div>
+            <div class="hours-table" id="hoursTable">
+              <div class="hours-row" data-day="1"><span class="day">Monday</span><span class="time">8:30 — 16:30</span></div>
+              <div class="hours-row" data-day="2"><span class="day">Tuesday</span><span class="time">8:30 — 16:30</span></div>
+              <div class="hours-row" data-day="3"><span class="day">Wednesday</span><span class="time">8:30 — 16:30</span></div>
+              <div class="hours-row" data-day="4"><span class="day">Thursday</span><span class="time">8:30 — 16:30</span></div>
+              <div class="hours-row" data-day="5"><span class="day">Friday</span><span class="time">8:30 — 16:30</span></div>
+              <div class="hours-row" data-day="6"><span class="day">Saturday</span><span class="time">8:30 — 12:00</span></div>
+              <div class="hours-row closed" data-day="0"><span class="day">Sunday</span><span class="time">Closed</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="5" r="2.5"/><path d="M12 8v5M7 22l5-9 5 9M9 14h6"/></svg></div>
+          <div>
+            <div class="lbl">Accessibility</div>
+            <div class="val">Wheelchair Accessible Entrance</div>
+            <div class="sub">Wheelchair-accessible car park</div>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg></div>
+          <div>
+            <div class="lbl">Payments Accepted</div>
+            <div class="pay-chips">
+              <span class="pay-chip">Credit Cards</span>
+              <span class="pay-chip">Debit Cards</span>
+              <span class="pay-chip">NFC Mobile Payments</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+          <div>
+            <div class="lbl">Workshop Status</div>
+            <div class="val" id="workshopStatus">Checking…</div>
+            <div class="sub" id="workshopSub">Live status · auto-updates</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="map-card reveal">
+        <iframe
+          src="https://www.google.com/maps?q=Cleveland+St,+Wirral+CH41+4JN&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Map showing S.Car Repair Centre on Cleveland St, Wirral"></iframe>
+        <div class="map-overlay">
+          <div class="left">
+            <div class="lbl">S.Car Repair Centre</div>
+            <div class="addr">Cleveland St · Wirral · CH41 4JN</div>
+          </div>
+          <a class="dir-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Cleveland+St,+Wirral+CH41+4JN">
+            Directions
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FAQ ====== -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center">
+      <span class="eyebrow" style="justify-content:center">Questions & Answers</span>
+      <h2 class="h2" style="margin-top:18px">Frequently Asked<br><span style="color:var(--hi-vis)">Questions</span></h2>
+    </div>
+
+    <div class="faq-list reveal-stagger">
+      <div class="faq-item active">
+        <div class="faq-q">
+          Where is S.CAR REPAIR CENTRE located?
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></div>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            The garage is located at Cleveland St, Wirral, Merseyside, CH41 4JN, near Wirral Town Centre. We provide convenient parking facilities for customers, including wheelchair-accessible parking.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          What services are available?
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></div>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            S.CAR REPAIR CENTRE provides professional car servicing, MOTs, diagnostics, bodywork, paint repairs, and used car sales. Our experienced technicians handle a wide range of vehicle maintenance needs for all makes and models.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          How can I get in touch?
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></div>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            Call us directly at <a href="tel:07359793570" style="color:var(--hi-vis)">07359793570</a> to book an appointment or visit the garage directly. Our team is ready to assist with your vehicle service requirements during our opening hours.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          Do you sell used cars?
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></div>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            Yes! We stock a selection of quality used cars for sale. Every car is checked, prepared, and signed off in our own workshop before it goes on the forecourt. Give us a call to see what we currently have available.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CTA Band ====== -->
+<section class="cta-band">
+  <div class="wrap cta-inner">
+    <div class="reveal">
+      <h2>Got A Car<br>That Needs Attention?</h2>
+      <p>Call the workshop directly — we'll talk you through it, give you an honest idea of cost, and book you in for a slot that suits.</p>
+    </div>
+    <div class="cta-actions reveal">
+      <a href="tel:07359793570" class="btn">
+        <span>Call 07359793570</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Cleveland+St,+Wirral+CH41+4JN" target="_blank" rel="noopener" class="btn">
+        <span>Get Directions</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ====== Footer ====== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="brand">
+          <div class="brand-mark">S</div>
+          <div class="brand-text">
+            <div class="name">S.Car Repair Centre</div>
+            <div class="sub">Wirral · Vehicle Repair</div>
+          </div>
+        </a>
+        <p>Independent vehicle repair workshop on Cleveland Street, Wirral. MOTs, bodywork, paint, diagnostics, used car sales and full mechanical repairs — carried out by a team that genuinely cares about the work.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">Car Servicing</a></li>
+          <li><a href="#services">MOT Testing</a></li>
+          <li><a href="#services">Bodywork &amp; Paint</a></li>
+          <li><a href="#services">Diagnostics</a></li>
+          <li><a href="#sales">Used Cars</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Workshop</h5>
+        <ul>
+          <li><a href="#why">Our Process</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#locate">Find Us</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:07359793570">07359793570</a></li>
+          <li><a href="#locate">Cleveland St, Wirral</a></li>
+          <li><a href="#locate">CH41 4JN</a></li>
+          <li><a href="#locate">Merseyside</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© <span id="year"></span> S.Car Repair Centre · Cleveland St, Wirral, Merseyside, CH41 4JN</div>
+      <div class="links">
+        <a href="#reviews">Reviews</a>
+        <a href="#locate">Directions</a>
+        <a href="tel:07359793570">Call</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ===== Burger ===== */
+  const burger = document.getElementById('burger');
+  const nav = document.getElementById('primaryNav');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('active');
+    nav.classList.toggle('open');
+  });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    burger.classList.remove('active');
+    nav.classList.remove('open');
+  }));
+
+  /* ===== Sticky header ===== */
+  const header = document.getElementById('nav');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 30);
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* ===== Render initial star rows ===== */
+  const starSvg = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.9 7.4.6-5.6 4.9 1.7 7.3L12 17.8 5.6 21.7l1.7-7.3L1.7 9.5l7.4-.6z"/></svg>';
+  const heroStars = document.getElementById('heroStars');
+  for (let i = 0; i < 5; i++) heroStars.innerHTML += '<span>'+starSvg+'</span>';
+  
+  const bigStars = document.getElementById('bigStars');
+  for (let i = 0; i < 5; i++) bigStars.innerHTML += starSvg;
+
+  /* ===== Reveal on scroll ===== */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        if (e.target.classList.contains('stats-grid') || e.target.id === 'ratingBars') {
+          animateStats(e.target);
+          animateBars(e.target);
+        }
+        io.unobserve(e.target);
+      }
+    });
+  }, {threshold:.18, rootMargin:'0px 0px -60px 0px'});
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => io.observe(el));
+
+  /* ===== Animated stats ===== */
+  function animateStats(scope){
+    scope.querySelectorAll('[data-target]').forEach(el => {
+      const target = parseFloat(el.dataset.target);
+      const decimals = parseInt(el.dataset.decimals || '0', 10);
+      const duration = 1400;
+      const start = performance.now();
+      const tick = now => {
+        const p = Math.min(1, (now - start) / duration);
+        const eased = 1 - Math.pow(1 - p, 3);
+        const val = (target * eased).toFixed(decimals);
+        el.textContent = decimals ? val : Math.round(val);
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    });
+  }
+  function animateBars(scope){
+    scope.querySelectorAll('.bar-fill').forEach(b => {
+      b.style.width = b.dataset.pct + '%';
+    });
+  }
+
+  /* ===== FAQ Accordion ===== */
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('active');
+        i.querySelector('.faq-a').style.maxHeight = '0';
+      });
+      // Open clicked
+      if (!isActive) {
+        item.classList.add('active');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+  // Init first open
+  const firstFaq = document.querySelector('.faq-item.active .faq-a');
+  if (firstFaq) firstFaq.style.maxHeight = firstFaq.scrollHeight + 'px';
+
+  /* ===== Interactive Services Grid (Originkit Logic) ===== */
+  const grid = document.getElementById('serviceGrid');
+  if (grid) {
+    let leaveTimer = null;
+    const cards = Array.from(grid.querySelectorAll('.service'));
+    
+    const getCols = () => {
+      const style = window.getComputedStyle(grid);
+      const colsStr = style.gridTemplateColumns;
+      return colsStr.split(' ').length;
+    };
+
+    const calculateNeighbors = (index) => {
+      const cols = getCols();
+      const out = [];
+      if (index % cols !== 0) out.push(index - 1);
+      if (index % cols !== cols - 1) out.push(index + 1);
+      out.push(index - cols);
+      out.push(index + cols);
+      return out.filter(n => n >= 0 && n < cards.length);
+    };
+
+    cards.forEach((card, i) => {
+      card.addEventListener('pointerenter', () => {
+        if (leaveTimer) {
+          clearTimeout(leaveTimer);
+          leaveTimer = null;
+        }
+        cards.forEach(c => c.classList.remove('is-big', 'is-small'));
+        card.classList.add('is-big');
+        
+        const neighbors = calculateNeighbors(i);
+        neighbors.forEach(nIdx => cards[nIdx].classList.add('is-small'));
+      });
+    });
+
+    grid.addEventListener('pointerleave', () => {
+      if (leaveTimer) clearTimeout(leaveTimer);
+      leaveTimer = setTimeout(() => {
+        cards.forEach(c => c.classList.remove('is-big', 'is-small'));
+      }, 200);
+    });
+  }
+
+  /* ===== Hours: highlight today + workshop status ===== */
+  (function(){
+    const now = new Date();
+    const day = now.getDay();
+    const hour = now.getHours() + now.getMinutes()/60;
+    document.querySelectorAll('.hours-row').forEach(row => {
+      if (parseInt(row.dataset.day,10) === day) row.classList.add('today');
+    });
+    const status = document.getElementById('workshopStatus');
+    const sub = document.getElementById('workshopSub');
+    
+    // Mon-Fri 8:30(8.5) - 16:30(16.5), Sat 8:30(8.5) - 12:00(12.0)
+    const open = ((day >= 1 && day <= 5 && hour >= 8.5 && hour < 16.5) || (day === 6 && hour >= 8.5 && hour < 12.0));
+    
+    if (status) {
+      status.innerHTML = open
+        ? 'Open Now <span class="now-badge">OPEN</span>'
+        : 'Closed <span class="now-badge closed">CLOSED</span>';
+      if (sub) sub.textContent = open
+        ? 'Closes soon'
+        : (day === 0 ? 'Weekend — back Mon 8:30' : 'Opens at 8:30 on the next working day');
+    }
+  })();
+
+  /* ===== Year ===== */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ===== Marquee pause on hover ===== */
+  const mq = document.getElementById('marqueeTrack');
+  mq.parentElement.addEventListener('mouseenter', () => mq.style.animationPlayState = 'paused');
+  mq.parentElement.addEventListener('mouseleave', () => mq.style.animationPlayState = 'running');
+  
+  /* ========================================================================
+     FETCH AND RENDER CONTENT FROM DECAP CMS (CARS, REVIEWS, SETTINGS)
+     ======================================================================== */
+
+  // Helper function to generate star ratings HTML
+  function generateStarsHTML(rating) {
+    const starSvg = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.9 7.4.6-5.6 4.9 1.7 7.3L12 17.8 5.6 21.7l1.7-7.3L1.7 9.5l7.4-.6z"/></svg>';
+    let html = '';
+    for (let i = 0; i < 5; i++) {
+      let color = (i < rating) ? 'var(--hi-vis)' : 'var(--steel-2)';
+      html += `<span style="color:${color}">${starSvg}</span>`;
+    }
+    return `<div class="stars" style="display:flex;gap:3px;margin-bottom:18px">${html}</div>`;
+  }
+
+  /* 1. Fetch and Render Cars */
+  fetch('content/cars.json')
+    .then(response => response.json())
+    .then(data => {
+      const grid = document.getElementById('salesGrid');
+      if (!grid || !data.cars) return;
+
+      // Map through the cars in the JSON and create HTML for each
+      grid.innerHTML = data.cars.map(car => `
+        <article class="car-card">
+          <div class="car-img">
+            <img src="${car.image || 'https://images.unsplash.com/photo-1503376780353-7e66727cd7e1?auto=format&fit=crop&w=800&q=70'}" alt="${car.title}">
+            <div class="car-badge">In Stock</div>
+          </div>
+          <div class="car-info">
+            <div class="car-name">${car.title}</div>
+            <div class="car-specs">
+              <div class="car-spec">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg> 
+                ${car.specs || 'Specs available on enquiry'}
+              </div>
+            </div>
+            <div class="car-bottom">
+              <div class="car-price">${car.price || 'POA'}</div>
+              <a href="tel:07359793570" class="car-enquire">Enquire <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+        </article>
+      `).join('');
+
+      // Re-trigger the reveal animation for the newly added cards
+      const salesIO = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('in');
+            salesIO.unobserve(e.target);
+          }
+        });
+      }, {threshold:.18, rootMargin:'0px 0px -60px 0px'});
+      salesIO.observe(grid);
+    })
+    .catch(error => console.error('Error loading cars:', error));
+
+  /* 2. Fetch and Render Reviews */
+  fetch('content/reviews.json')
+    .then(response => response.json())
+    .then(data => {
+      const grid = document.getElementById('reviewsGrid');
+      if (!grid || !data.reviews) return;
+
+      grid.innerHTML = data.reviews.map(r => `
+        <article class="review">
+          <div class="quote-mark">"</div>
+          ${generateStarsHTML(r.rating || 5)}
+          <div class="body"><div>${r.text}</div></div>
+          <div class="author">
+            <div class="avatar">${(r.name || 'A').charAt(0)}</div>
+            <div class="author-info">
+              <div class="name">${r.name}</div>
+              <div class="meta">${r.meta || 'Google Review'}</div>
+            </div>
+          </div>
+        </article>
+      `).join('');
+
+      // Re-trigger the reveal animation
+      const revIO = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('in');
+            revIO.unobserve(e.target);
+          }
+        });
+      }, {threshold:.18, rootMargin:'0px 0px -60px 0px'});
+      revIO.observe(grid);
+    })
+    .catch(error => console.error('Error loading reviews:', error));
+
+  /* 3. Fetch Site Settings (Announcements) */
+  fetch('content/settings.json')
+    .then(response => response.json())
+    .then(data => {
+      const banner = document.getElementById('announcementBanner');
+      if (banner && data.banner) {
+        // If the owner typed a message in the CMS, show it at the top of the site
+        banner.innerHTML = `<div style="background:var(--hi-vis);color:#0a0a0b;padding:12px;text-align:center;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;font-size:14px;">${data.banner}</div>`;
+      }
+    })
+    .catch(error => console.error('Error loading settings:', error));
+
+  /* ===== Netlify Identity Redirect ===== */
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
