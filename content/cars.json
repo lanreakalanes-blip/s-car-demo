@@ -24,5 +24,16 @@
     }
   ],
   "title": "jefbcjnb",
-  "price": "£3800"
+  "price": "£3800",
+  "cars_list": [
+    {
+      "status": "IN STOCK",
+      "title": "209",
+      "price": "308",
+      "year": "309",
+      "mileage": "3-9",
+      "transmission": "930",
+      "image": "/images/uploads/photo-1605559424843-9e4c228bf1c2.avif"
+    }
+  ]
 }
