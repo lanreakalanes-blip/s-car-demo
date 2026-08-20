@@ -1149,15 +1149,17 @@
     return `<div class="stars" style="display:flex;gap:3px;margin-bottom:18px">${html}</div>`;
   }
 
- 
 /* 1. Fetch and Render Cars */
-fetch('content/cars.json')
+fetch('/content/cars.json')
   .then(res => res.json())
   .then(data => {
-    const cars = Array.isArray(data) ? data : (data.cars_list || []);
-    const grid = document.getElementById('carsGrid');
+    // Finds the list no matter which key Decap CMS used
+    const cars = Array.isArray(data) ? data : (data.cars_list || data.cars || data.items || Object.values(data)[0] || []);
+    
+    // Finds the grid container on the page
+    const grid = document.getElementById('salesGrid') || document.getElementById('carsGrid') || document.querySelector('.cars-grid');
 
-    if (grid && cars) {
+    if (grid && cars.length > 0) {
       grid.innerHTML = cars.map(car => {
         const imageSrc = car.image
           ? (car.image.startsWith('http') || car.image.startsWith('/') ? car.image : '/' + car.image)
@@ -1166,14 +1168,14 @@ fetch('content/cars.json')
         return `
           <article class="car-card">
             <div class="car-img">
-              <img src="${imageSrc}" alt="${car.title}">
-              <div class="car-badge">${car.status || 'In Stock'}</div>
+              <img src="${imageSrc}" alt="${car.title || 'Car'}">
+              <div class="car-badge">${car.badge || car.status || 'IN STOCK'}</div>
             </div>
             <div class="car-info">
-              <h3 class="car-title">${car.title}</h3>
+              <h3 class="car-title">${car.title || ''}</h3>
               <div class="car-specs">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
-                <span>${car.specs || 'Specs available on enquiry'}</span>
+                <span>${car.specs || car.mileage || 'Specs available on enquiry'}</span>
               </div>
             </div>
             <div class="car-bottom">
@@ -1185,7 +1187,7 @@ fetch('content/cars.json')
       }).join('');
     }
 
-    // Re-trigger the reveal animation for the newly added cards
+    // Re-trigger reveal animation
     const salesIO = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) {
