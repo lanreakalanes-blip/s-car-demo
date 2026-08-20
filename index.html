@@ -254,7 +254,12 @@
   .review .stars{display:flex;gap:3px;color:var(--hi-vis);margin-bottom:18px}
   .review .stars svg{width:16px;height:16px}
   .review .body{color:var(--fog);font-size:1rem;line-height:1.65;margin-bottom:24px;position:relative;z-index:2}
-  .review .body .truncate{display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+  .review .body .truncate {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
   .review .expand{font-family:'Oswald';font-size:11px;letter-spacing:.22em;color:var(--hi-vis);text-transform:uppercase;cursor:pointer;margin-top:8px;display:inline-block}
   .review .expand:hover{color:var(--hi-vis-2)}
   .review .author{display:flex;align-items:center;gap:14px;padding-top:20px;border-top:1px solid var(--hairline)}
@@ -1145,34 +1150,40 @@
   }
 
   /* 1. Fetch and Render Cars */
-  fetch('content/cars.json')
-    .then(response => response.json())
-    .then(data => {
-      const grid = document.getElementById('salesGrid');
-      if (!grid || !data.cars) return;
+ fetch('content/cars.json')
+  .then(response => response.json())
+  .then(data => {
+    const grid = document.getElementById('salesGrid');
+    const carData = Array.isArray(data) ? data : data.cars;
 
-      // Map through the cars in the JSON and create HTML for each
-      grid.innerHTML = data.cars.map(car => `
-        <article class="car-card">
-          <div class="car-img">
-            <img src="${car.image || 'https://images.unsplash.com/photo-1503376780353-7e66727cd7e1?auto=format&fit=crop&w=800&q=70'}" alt="${car.title}">
-            <div class="car-badge">In Stock</div>
-          </div>
-          <div class="car-info">
-            <div class="car-name">${car.title}</div>
-            <div class="car-specs">
-              <div class="car-spec">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg> 
-                ${car.specs || 'Specs available on enquiry'}
+    if (grid && carData) {
+      grid.innerHTML = carData.map(car => {
+        const imageSrc = car.image 
+          ? (car.image.startsWith('/') ? car.image : '/' + car.image) 
+          : 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=70';
+
+        return `
+          <article class="car-card">
+            <div class="car-img">
+              <img src="${imageSrc}" alt="${car.title}">
+              <div class="car-badge">In Stock</div>
+            </div>
+            <div class="car-info">
+              <div class="car-name">${car.title}</div>
+              <div class="car-specs">
+                <div class="car-spec">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg> 
+                  ${car.specs || 'Specs available on enquiry'}
+                </div>
+              </div>
+              <div class="car-bottom">
+                <div class="car-price">${car.price || 'POA'}</div>
+                <a href="tel:07359793570" class="car-enquire">Enquire <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
               </div>
             </div>
-            <div class="car-bottom">
-              <div class="car-price">${car.price || 'POA'}</div>
-              <a href="tel:07359793570" class="car-enquire">Enquire <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-            </div>
-          </div>
-        </article>
-      `).join('');
+          </article>
+        `;
+      }).join('');
 
       // Re-trigger the reveal animation for the newly added cards
       const salesIO = new IntersectionObserver(entries => {
@@ -1182,11 +1193,12 @@
             salesIO.unobserve(e.target);
           }
         });
-      }, {threshold:.18, rootMargin:'0px 0px -60px 0px'});
-      salesIO.observe(grid);
-    })
-    .catch(error => console.error('Error loading cars:', error));
+      }, {threshold: .18, rootMargin: '0px 0px -60px 0px'});
 
+      salesIO.observe(grid);
+    }
+  })
+  .catch(error => console.error('Error loading cars:', error));
   /* 2. Fetch and Render Reviews */
   fetch('content/reviews.json')
     .then(response => response.json())
