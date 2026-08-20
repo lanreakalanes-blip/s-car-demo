@@ -1149,14 +1149,11 @@
     return `<div class="stars" style="display:flex;gap:3px;margin-bottom:18px">${html}</div>`;
   }
 
-/* 1. Fetch and Render Cars */
+//* 1. Fetch and Render Cars */
 fetch('/content/cars.json')
   .then(res => res.json())
   .then(data => {
-    // Finds the list no matter which key Decap CMS used
     const cars = Array.isArray(data) ? data : (data.cars_list || data.cars || data.items || Object.values(data)[0] || []);
-    
-    // Finds the grid container on the page
     const grid = document.getElementById('salesGrid') || document.getElementById('carsGrid') || document.querySelector('.cars-grid');
 
     if (grid && cars.length > 0) {
@@ -1165,6 +1162,20 @@ fetch('/content/cars.json')
           ? (car.image.startsWith('http') || car.image.startsWith('/') ? car.image : '/' + car.image)
           : 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=70';
 
+        const price = car.price ? (car.price.toString().startsWith('£') ? car.price : '£' + car.price) : 'POA';
+        
+        // Build original spec items (Year, Mileage, Transmission)
+        const specs = [];
+        if (car.year) specs.push(`<span>≡ ${car.year}</span>`);
+        if (car.mileage) specs.push(`<span>🕒 ${car.mileage}</span>`);
+        if (car.transmission) specs.push(`<span>≡ ${car.transmission}</span>`);
+        const specsHTML = specs.length > 0 ? specs.join(' ') : `<span>${car.specs || ''}</span>`;
+
+        // Pre-filled WhatsApp enquiry link
+        const whatsappPhone = '447593997570';
+        const message = encodeURIComponent(`Hi, I'm interested in the ${car.title || 'car'} listed for ${price} on your website. Is it still available?`);
+        const whatsappUrl = `https://wa.me/${whatsappPhone}?text=${message}`;
+
         return `
           <article class="car-card">
             <div class="car-img">
@@ -1172,22 +1183,21 @@ fetch('/content/cars.json')
               <div class="car-badge">${car.badge || car.status || 'IN STOCK'}</div>
             </div>
             <div class="car-info">
-              <h3 class="car-title">${car.title || ''}</h3>
+              <h3 class="car-title">${car.title || 'Untitled Car'}</h3>
               <div class="car-specs">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
-                <span>${car.specs || car.mileage || 'Specs available on enquiry'}</span>
+                ${specsHTML}
               </div>
-            </div>
-            <div class="car-bottom">
-              <div class="car-price">${car.price ? (car.price.startsWith('£') ? car.price : '£' + car.price) : 'POA'}</div>
-              <a href="tel:07593997570" class="car-enquire">Enquire <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+              <hr class="car-divider">
+              <div class="car-bottom">
+                <div class="car-price">${price}</div>
+                <a href="${whatsappUrl}" target="_blank" rel="noopener noreferrer" class="car-enquire">ENQUIRE</a>
+              </div>
             </div>
           </article>
         `;
       }).join('');
     }
 
-    // Re-trigger reveal animation
     const salesIO = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) {
@@ -1199,7 +1209,7 @@ fetch('/content/cars.json')
 
     document.querySelectorAll('.car-card').forEach(el => salesIO.observe(el));
   })
-  .catch(error => console.error('Error loading cars:', error));
+ .catch(error => console.error('Error loading cars:', error));
   /* 2. Fetch and Render Reviews */
   fetch('content/reviews.json')
     .then(response => response.json())
