@@ -1149,54 +1149,53 @@
     return `<div class="stars" style="display:flex;gap:3px;margin-bottom:18px">${html}</div>`;
   }
 
-  /* 1. Fetch and Render Cars */
- fetch('content/cars.json')
-  .then(response => response.json())
+ 
+/* 1. Fetch and Render Cars */
+fetch('content/cars.json')
+  .then(res => res.json())
   .then(data => {
-    const grid = document.getElementById('salesGrid');
-    const carData = Array.isArray(data) ? data : data.cars;
+    const cars = Array.isArray(data) ? data : (data.cars_list || []);
+    const grid = document.getElementById('carsGrid');
 
-    if (grid && carData) {
-      grid.innerHTML = carData.map(car => {
-        const imageSrc = car.image 
-          ? (car.image.startsWith('/') ? car.image : '/' + car.image) 
+    if (grid && cars) {
+      grid.innerHTML = cars.map(car => {
+        const imageSrc = car.image
+          ? (car.image.startsWith('http') || car.image.startsWith('/') ? car.image : '/' + car.image)
           : 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=70';
 
         return `
           <article class="car-card">
             <div class="car-img">
               <img src="${imageSrc}" alt="${car.title}">
-              <div class="car-badge">In Stock</div>
+              <div class="car-badge">${car.status || 'In Stock'}</div>
             </div>
             <div class="car-info">
-              <div class="car-name">${car.title}</div>
+              <h3 class="car-title">${car.title}</h3>
               <div class="car-specs">
-                <div class="car-spec">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg> 
-                  ${car.specs || 'Specs available on enquiry'}
-                </div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                <span>${car.specs || 'Specs available on enquiry'}</span>
               </div>
-              <div class="car-bottom">
-                <div class="car-price">${car.price || 'POA'}</div>
-                <a href="tel:07359793570" class="car-enquire">Enquire <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-              </div>
+            </div>
+            <div class="car-bottom">
+              <div class="car-price">${car.price ? (car.price.startsWith('£') ? car.price : '£' + car.price) : 'POA'}</div>
+              <a href="tel:07593997570" class="car-enquire">Enquire <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
             </div>
           </article>
         `;
       }).join('');
-
-      // Re-trigger the reveal animation for the newly added cards
-      const salesIO = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('in');
-            salesIO.unobserve(e.target);
-          }
-        });
-      }, {threshold: .18, rootMargin: '0px 0px -60px 0px'});
-
-      salesIO.observe(grid);
     }
+
+    // Re-trigger the reveal animation for the newly added cards
+    const salesIO = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          salesIO.unobserve(e.target);
+        }
+      });
+    }, { threshold: -18, rootMargin: '0px 0px -60px 0px' });
+
+    document.querySelectorAll('.car-card').forEach(el => salesIO.observe(el));
   })
   .catch(error => console.error('Error loading cars:', error));
   /* 2. Fetch and Render Reviews */
