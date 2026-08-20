@@ -43,6 +43,15 @@
       "mileage": "hdf",
       "transmission": "hdf",
       "image": "/images/uploads/photo-1552519507-da3b142c6e3d-4-.avif"
+    },
+    {
+      "status": "IN STOCK",
+      "title": "dork",
+      "price": "35000",
+      "year": "2026",
+      "mileage": "45",
+      "transmission": "automatic",
+      "image": "/images/uploads/photo-1552519507-da3b142c6e3d-3-.avif"
     }
   ]
 }
