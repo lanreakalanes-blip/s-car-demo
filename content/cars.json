@@ -1,24 +1,26 @@
 {
   "cars": [
     {
-      "title": "Ford Mondeo Estate",
+      "transmission": "Automatic",
       "price": "£11,200",
+      "mileage": "45000",
+      "photo": "/images/uploads/photo-1605559424843-9e4c228bf1c2.avif",
       "status": "Deposit Taken",
       "specs": "2018 · 45,000 mi · Automatic",
-      "transmission": "Automatic",
-      "mileage": "45000",
-      "year": 2018,
-      "image": "images/uploads/photo-1605559424843-9e4c228bf1c2.avif"
+      "title": "Ford Mondeo Estate",
+      "image": "images/uploads/photo-1605559424843-9e4c228bf1c2.avif",
+      "year": 2018
     },
     {
-      "title": "VW Scirocco 2.0 TDI",
+      "transmission": "Manual",
       "price": "£6,495",
+      "mileage": "82000",
+      "photo": "/images/uploads/photo-1605559424843-9e4c228bf1c2.avif",
       "status": "In Stock",
       "specs": "2014 · 82,000 mi · Manual",
-      "transmission": "Manual",
-      "mileage": "82000",
-      "year": 2014,
-      "image": "images/uploads/photo-1552519507-da3b142c6e3d.avif"
+      "title": "VW Scirocco 2.0 TDI",
+      "image": "images/uploads/photo-1552519507-da3b142c6e3d.avif",
+      "year": 2014
     }
   ]
 }
